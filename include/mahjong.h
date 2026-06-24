@@ -1,6 +1,8 @@
 #ifndef MAHJONG_H
 #define MAHJONG_H
 
+#include<stdint.h>
+
 #ifndef NUM_TILE_EACHKIND
 #define NUM_TILE_EACHKIND 4U
 #endif
@@ -37,33 +39,33 @@
 #define NUM_TILE_IN_HAND (NUM_GROUP_IN_HAND * 3U + 1U)
 
 #if NUM_TILE_TOTAL < 0x100
-typedef unsigned char mjtile;
+typedef uint8_t mjtile;
 #elif NUM_TILE_TOTAL < 0x10000
-typedef unsigned short mjtile;
+typedef uint16_t mjtile;
 #elif NUM_TILE_TOTAL < 0x100000000
-typedef unsigned long mjtile;
+typedef uint32_t mjtile;
 #else
-typedef unsigned long long mjtile;
+typedef uintmax_t mjtile;
 #endif
 
 #if NUM_KIND_BUFFED < 0x100
-typedef unsigned char mjkind;
+typedef uint8_t mjkind;
 #elif NUM_KIND_BUFFED < 0x10000
-typedef unsigned short mjkind;
+typedef uint16_t mjkind;
 #elif NUM_KIND_BUFFED < 0x100000000
-typedef unsigned long mjkind;
+typedef uint32_t mjkind;
 #else
-typedef unsigned long long mjkind;
+typedef uintmax_t mjkind;
 #endif
 
 #if NUM_TILE_EACHKIND < 0x100
-typedef unsigned char numkind;
+typedef uint8_t numkind;
 #elif NUM_TILE_EACHKIND < 0x10000
-typedef unsigned short numkind;
+typedef uint16_t numkind;
 #elif NUM_TILE_EACHKIND < 0x100000000
-typedef unsigned long numkind;
+typedef uint32_t numkind;
 #else
-typedef unsigned long long numkind;
+typedef uintmax_t numkind;
 #endif
 
 #ifndef MJSUFFIX
