@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.28)
 project(basic_mahjong VERSION 1.0)
 if(MSVC)
-    add_compile_options(/W4)
+    add_compile_options(/utf-8 /W4)
 else()
     add_compile_options(-Wall)
 endif()

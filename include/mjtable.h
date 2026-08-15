@@ -3,14 +3,12 @@
 
 #include<mahjong.h>
 
-enum mjtablestate {
-	MJS_N,
-	MJS_DRAW,
-	MJS_DISCARD,
-	MJS_CHIPON,
-	MJS_KAN_R,
-	MJS_KAN_C,
-};
+#define MJS_N 0
+#define MJS_DRAW 1
+#define MJS_DISCARD 2
+#define MJS_CHIPON 3
+#define MJS_KAN_R 4
+#define MJS_KAN_C 5
 
 struct MJSUFFIXES(mjtable, MJSUFFIX) {
 	MJSUFFIXES(mjhand, MJSUFFIX) hands[NUM_MJPLAYER];
@@ -23,7 +21,7 @@ struct MJSUFFIXES(mjtable, MJSUFFIX) {
 	mjtile handtileLinkF[NUM_MJPLAYER][NUM_TILE_TOTAL + 1];
 	mjtile handtileLinkB[NUM_MJPLAYER][NUM_TILE_TOTAL + 1];
 
-	enum mjtablestate state;
+	uint8_t state;
 	mjtile posFront, posBack;
 	unsigned char player;
 	unsigned char playerDealer;
