@@ -5,6 +5,7 @@ if(MSVC)
 else()
     add_compile_options(-Wall)
 endif()
+include(.compiler_options.cmake OPTIONAL)
 
 if(NOT DEFINED LIBNAME_BASIC_MAHJONG)
     set(LIBNAME_BASIC_MAHJONG maj)
